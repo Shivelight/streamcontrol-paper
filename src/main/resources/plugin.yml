@@ -1,0 +1,15 @@
+name: StreamControl
+version: ${project.version}
+main: id.shivelight.paper.streamcontrol.StreamControl
+api-version: 1.13
+authors: [Shivelight]
+description: Control notification message stream.
+website: https://shivelight.id
+commands:
+  streamcontrol:
+    usage: /<command> reload
+    description: Reload StreamControl
+permissions:
+  streamcontrol.use:
+    description: Use StreamControl command.
+    default: op

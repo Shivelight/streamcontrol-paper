@@ -1,0 +1,7 @@
+# StreamControl
+# %player% will be converted to player display name. Can be repeated.
+# You can use color with & symbol.
+join-message-enabled: true
+quit-message-enabled: false
+first-join-only: true
+first-join-message: "&d&l%player% has joined for the first time!"
