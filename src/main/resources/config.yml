@@ -2,9 +2,10 @@
 # %player% will be converted to player display name. Can be repeated.
 # You can use color with § symbol.
 join-message-enabled: true
-quit-message-enabled: false
+join-message: "§a§lWelcome %player%!"
 first-join-only: true
-first-join-message: "&d&l%player% has joined for the first time!"
+first-join-message: "§d§l%player% has joined for the first time!"
+quit-message-enabled: false
 join-motd-enabled: true
 join-motd-message:
   - "§aThis is a MOTD, can be disabled or changed in configuration file."
