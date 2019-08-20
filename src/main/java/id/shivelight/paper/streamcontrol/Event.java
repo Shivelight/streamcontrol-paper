@@ -42,13 +42,19 @@ public class Event implements Listener {
             if (plugin.config.getConfig().getBoolean("first-join-only")) {
                 if (!event.getPlayer().hasPlayedBefore()) {
                     String message = plugin.config.getConfig().getString("first-join-message");
-                    message = message.replaceAll("%player%", event.getPlayer().getDisplayName());
                     if (!message.isEmpty()) {
-                        event.setJoinMessage(Util.colorize(message));
+                        message = message.replaceAll("%player%", event.getPlayer().getDisplayName());
+                        event.setJoinMessage(message);
                     }
                 } else {
                     event.setJoinMessage(null);
                 }
+            }
+
+            String message = plugin.config.getConfig().getString("join-message");
+            if (!message.isEmpty()) {
+                message = message.replaceAll("%player%", event.getPlayer().getDisplayName());
+                event.setJoinMessage(message);
             }
         } else {
             event.setJoinMessage(null);
