@@ -1,5 +1,5 @@
 /*
- * This file is part of StreamControl 
+ * This file is part of StreamControl
  * (see https://github.com/Shivelight/streamcontrol-paper).
  *
  * Copyright (c) 2019 Shivelight.
@@ -26,6 +26,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
+import java.util.List;
+
 public class Event implements Listener {
 
     private StreamControl plugin;
@@ -50,6 +52,11 @@ public class Event implements Listener {
             }
         } else {
             event.setJoinMessage(null);
+        }
+
+        if (plugin.config.getConfig().getBoolean("join-motd-enabled")) {
+            List<String> message = plugin.config.getConfig().getStringList("join-motd-message");
+            event.getPlayer().sendMessage(message.toArray(new String[0]));
         }
     }
 
